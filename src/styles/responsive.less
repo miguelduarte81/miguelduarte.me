@@ -1,0 +1,187 @@
+/* iPad Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .section {
+    padding: 100px 0px;
+  }
+
+  .container {
+    padding: 0px 40px;
+  }
+
+  .intro { 
+    .logo-wrapper {
+      width: 600px !important;
+    }
+
+    #logo .logo-ribbon {
+      top: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .margin--top {
+    margin-top: 50px;
+  }
+
+  .gallery .col-right {
+    margin: 0px;
+  }
+
+  .tagline {
+    .font(@font-bold, 10vw, .8, 700);
+    span { 
+      .font(@font-light, 1em, .8, 700); 
+    }
+  }
+
+  .main-title {
+    .font(@font-bold, 16vw, .8, 700);
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    .font(@font-bold, 4em, 1.2, 300);
+    max-width: 100%;
+    
+    &.light {
+      .font(@font-light, 3.8em, 1.2, 300);
+    }
+  }
+
+  .project-col {
+    &:nth-child(even) {
+      margin-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+
+  .home-intro {
+    margin-top: 200px !important;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+
+  .section {
+    padding: 50px 0px;
+  }
+
+  .container {
+    padding: 0px 20px;
+  }
+
+  .margin--top {
+    margin-top: 50px;
+  }
+
+  .intro { 
+    height: 70vh;
+
+    .logo-wrapper {
+      width: 320px !important;
+    }
+
+    #logo .logo-ribbon {
+      top: 180px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .project-col {
+    &:nth-child(even) {
+      margin-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+
+  .work--preview,
+  .article--preview  {
+    height: auto;
+    min-height: 250px;
+  }
+
+  .header {
+    min-height: 80vh;
+  }
+
+  .content {
+    margin: 100px auto;
+  
+    h3 { margin-top: 50px; }
+    h4 { margin-top: 20px; margin-bottom: 20px; }
+  }
+
+  .copy {
+    margin: 50px auto;
+  }
+
+  .tagline {
+    .font(@font-bold, 10vw, .8, 700);
+    span { 
+      .font(@font-light, 1em, .8, 700); 
+    }
+  }
+
+  .main-title {
+    .font(@font-bold, 16vw, .8, 700);
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    .font(@font-bold, 2.6em, 1.2, 300);
+    max-width: 100%;
+    
+    &.light {
+      .font(@font-light, 2.2em, 1.2, 300);
+    }
+  }
+
+  .sub-title {
+    .font(@font-light, 2em, 1.2, 300);
+    margin-bottom: 20px;
+  }
+
+  .small-title {
+    .font(@font-light, 1.8em, 1.2, 300);
+  }
+
+  .gallery {
+    .col-right {
+      margin-top: 0px;
+    }
+  }
+
+  .next {
+    width: 100%;
+    min-height: 20vh;
+    .more {
+      .font(@font-medium, 4em, 1.5, 600);
+    }
+  }
+
+  .el-row {
+    margin: 0 !important;
+    .el-col {
+      padding: 0 !important;
+    }
+  }
+
+  .home-intro {
+    margin-top: 200px !important;
+  }
+
+  .work {
+    padding-top: 50px !important;
+  }
+
+  .parallax {
+    height: 50vh;
+  }
+
+}

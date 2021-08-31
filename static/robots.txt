@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: 
+Sitemap: https://miguelduarte.me/sitemap.xml

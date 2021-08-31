@@ -76,6 +76,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+
+  metaInfo() {
+    return {
+      title: 'Work'
+    }
+  },
+
   components: {
     Logo,
     Icon,

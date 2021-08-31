@@ -100,6 +100,13 @@ import Scroll from '~/components/Scroll'
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+
+  metaInfo() {
+    return {
+      title: 'Profile'
+    }
+  },
+
   data() {
     return {
       clients: ['adobe', 'autodesk', 'bosch', 'cisco', 'citrix', 'heathrow', 'hyundai', 'kia', 'mastercard', 'mazda', 'mercedes', 'nokia', 'regus', 'sap', 'sita', 'skrill', 'unilever', 'vodafone'],

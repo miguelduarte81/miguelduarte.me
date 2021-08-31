@@ -9,6 +9,7 @@
       <div class="container">
         <el-row type="flex" align="middle" class="header" :gutter="20">
           <el-col :md="24">
+
             <span class="client">{{ $page.Prismic.project.agency }}</span> 
             <h1 class="main-title">{{ $page.Prismic.project.client }}</h1>
             <span 
@@ -70,7 +71,7 @@ import Video from '~/components/Sections/Video';
 export default {
   metaInfo() {
     return {
-      title: this.$page.Prismic.project.title[0].text,
+      title: this.$page.Prismic.project.client,
       meta: [
         {
           key: 'description',

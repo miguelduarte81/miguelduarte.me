@@ -1,0 +1,324 @@
+{
+  "id": "project",
+  "label": "Project",
+  "repeatable": true,
+  "status": true,
+  "format": "page",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": "UID"
+        }
+      },
+      "agency": {
+        "type": "Text",
+        "config": {
+          "label": "agency",
+          "placeholder": "Agency"
+        }
+      },
+      "client": {
+        "type": "Text",
+        "config": {
+          "label": "Client",
+          "placeholder": "Client"
+        }
+      },
+      "hero": {
+        "type": "Image",
+        "config": {
+          "constraint": {
+            "width": 1600,
+            "height": 800
+          },
+          "thumbnails": [
+            {
+              "name": "square",
+              "width": 800,
+              "height": 800
+            }
+          ],
+          "label": "hero"
+        }
+      },
+      "services": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "service": {
+              "type": "Text",
+              "config": {
+                "label": "Service",
+                "placeholder": "Service"
+              }
+            }
+          },
+          "label": "Services"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "Sections": {
+      "body": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "rich_text": {
+              "type": "SharedSlice"
+            },
+            "parallax_img": {
+              "type": "SharedSlice"
+            },
+            "intro_copy": {
+              "type": "SharedSlice"
+            },
+            "image_gallery": {
+              "type": "SharedSlice"
+            },
+            "color_pallete": {
+              "type": "SharedSlice"
+            },
+            "identity": {
+              "type": "Slice",
+              "fieldset": "Identity",
+              "description": "Project Identity",
+              "icon": "face",
+              "display": "list",
+              "non-repeat": {
+                "logo": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1200,
+                      "height": 600
+                    },
+                    "thumbnails": [],
+                    "label": "Logo"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "colors": {
+              "type": "Slice",
+              "fieldset": "Colors",
+              "description": "Project Colors",
+              "icon": "palette",
+              "display": "list",
+              "non-repeat": {
+                "colours": {
+                  "type": "StructuredText",
+                  "config": {
+                    "multi": "paragraph,strong,em,embed",
+                    "allowTargetBlank": true,
+                    "label": "Colours",
+                    "placeholder": "Project Colours"
+                  }
+                }
+              },
+              "repeat": {
+                "hex": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Hex"
+                  }
+                },
+                "cmyk": {
+                  "type": "Text",
+                  "config": {
+                    "label": "CMYK",
+                    "placeholder": "C0 M0 Y0 K0"
+                  }
+                },
+                "pantone": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Pantone",
+                    "placeholder": "Pantone"
+                  }
+                }
+              }
+            },
+            "featured_video": {
+              "type": "Slice",
+              "fieldset": "Video",
+              "description": "Project Video",
+              "icon": "ondemand_video",
+              "display": "list",
+              "non-repeat": {
+                "video_title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading3",
+                    "label": "Video Title",
+                    "placeholder": "Video Title"
+                  }
+                },
+                "video_text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "multi": "paragraph,strong,em,embed",
+                    "label": "Video Text",
+                    "placeholder": "Video Text"
+                  }
+                },
+                "video_id": {
+                  "type": "Number",
+                  "config": {
+                    "label": "Video ID",
+                    "placeholder": "Video ID (Vimeo)"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "copy": {
+              "type": "Slice",
+              "fieldset": "Copy",
+              "description": "Project Copy Area",
+              "icon": "text_fields",
+              "display": "list",
+              "non-repeat": {
+                "header": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading3",
+                    "label": "Header",
+                    "placeholder": "Header"
+                  }
+                },
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "multi": "paragraph,strong,em,hyperlink",
+                    "allowTargetBlank": true,
+                    "label": "Text",
+                    "placeholder": "Text"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "parallax": {
+              "type": "Slice",
+              "fieldset": "Parallax",
+              "description": "Project Parallax Image",
+              "icon": "image",
+              "display": "list",
+              "non-repeat": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1920,
+                      "height": 1080
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                }
+              },
+              "repeat": {}
+            },
+            "gallery_grid": {
+              "type": "Slice",
+              "fieldset": "Gallery Grid",
+              "description": "Project Gallery",
+              "icon": "grid_on",
+              "display": "list",
+              "non-repeat": {},
+              "repeat": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 650,
+                      "height": null
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "multi": "paragraph,strong,em,hyperlink",
+                    "allowTargetBlank": true,
+                    "label": "Description",
+                    "placeholder": "Description"
+                  }
+                }
+              }
+            },
+            "featured_image": {
+              "type": "Slice",
+              "fieldset": "Featured Image",
+              "description": "Layout for featured image",
+              "icon": "add_a_photo",
+              "display": "list",
+              "non-repeat": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": 1440,
+                      "height": null
+                    },
+                    "thumbnails": [
+                      {
+                        "name": "tablet",
+                        "width": 900,
+                        "height": null
+                      },
+                      {
+                        "name": "mobile",
+                        "width": 320,
+                        "height": null
+                      }
+                    ],
+                    "label": "Featured Image"
+                  }
+                }
+              },
+              "repeat": {}
+            }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Meta Description"
+        }
+      },
+      "meta_keywords": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Keywords",
+          "placeholder": "Meta Keywords"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

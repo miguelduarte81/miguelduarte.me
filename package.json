@@ -1,0 +1,31 @@
+{
+	"name": "miguelduarte.me",
+	"version": "3.0.0",
+	"author": "Miguel Duarte <info@miguelduarte.me> (https://www.miguelduarte.me)",
+	"private": true,
+	"packageManager": "pnpm@8.9.2",
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"slicemachine": "start-slicemachine"
+	},
+	"dependencies": {
+		"@nuxtjs/fontaine": "^0.4.1",
+		"@prismicio/client": "^7.3.1",
+		"gsap": "file:gsap-bonus.tgz",
+		"nuxt": "^3.10.3",
+		"sass": "^1.70.0",
+		"vite-svg-loader": "^4.0.0",
+		"vue": "^3.4.19",
+		"vue-router": "^4.3.0"
+	},
+	"devDependencies": {
+		"@nuxtjs/prismic": "^3.1.0",
+		"@slicemachine/adapter-nuxt": "^0.3.36",
+		"slice-machine-ui": "^1.24.1"
+	}
+}

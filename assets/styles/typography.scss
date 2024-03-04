@@ -1,0 +1,253 @@
+@font-face {
+	font-family: 'AMAR Light';
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url('../fonts/amar_light.eot');
+	src: url('../fonts/amar_light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/amar_light.woff2') format('woff2'),
+		url('../fonts/amar_light.woff') format('woff'),
+		url('../fonts/amar_light.otf') format('opentype'),
+		url('../fonts/amar_light.ttf') format('truetype'),
+		url('../fonts/amar_light.svg#amarregular') format('svg');
+}
+
+@font-face {
+	font-family: 'AMAR Regular';
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url('../fonts/amar_regular.eot');
+	src: url('../fonts/amar_regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/amar_regular.woff2') format('woff2'),
+		url('../fonts/amar_regular.woff') format('woff'),
+		url('../fonts/amar_regular.otf') format('opentype'),
+		url('../fonts/amar_regular.ttf') format('truetype'),
+		url('../fonts/amar_regular.svg#amarregular') format('svg');
+}
+
+@font-face {
+	font-family: 'AMAR Bold';
+	font-style: normal;
+	font-weight: bold;
+	font-display: swap;
+	src: url('../fonts/amar_bold.eot');
+	src: url('../fonts/amar_bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/amar_bold.woff2') format('woff2'),
+		url('../fonts/amar_bold.woff') format('woff'),
+		url('../fonts/amar_bold.otf') format('opentype'),
+		url('../fonts/amar_bold.ttf') format('truetype'),
+		url('../fonts/amar_bold.svg#amarbold') format('svg');
+}
+
+/* HEADER STYLES */
+.main-title {
+	font-family: var(--font-bold);
+	font-size: 6em;
+	line-height: 1em;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	font-kerning: none;
+
+	@media only screen and (max-width: 767px) {
+		font-size: 5em;
+	}
+
+	span {
+		color: var(--color-primary);
+	}
+
+	&.light {
+		font-family: var(--font-light);
+	}
+}
+
+.header1 {
+	font-family: var(--font-bold);
+	font-size: 14em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+	margin: 40px 0px;
+	letter-spacing: -2px;
+	font-kerning: none;
+
+	@media only screen and (max-width: 767px) {
+		font-size: 5em;
+	}
+}
+
+.header2 {
+	font-family: var(--font-bold);
+	font-size: 7em;
+	line-height: 1.4em;
+	text-transform: uppercase;
+	margin: 20px 0px;
+	letter-spacing: -2px;
+	font-kerning: none;
+
+	@media only screen and (max-width: 767px) {
+		font-size: 5.5em;
+	}
+}
+
+.header3 {
+	font-family: var(--font-bold);
+	font-size: 5em;
+	line-height: 1.4em;
+	text-transform: uppercase;
+	font-kerning: none;
+
+	span {
+		color: var(--color-primary);
+	}
+
+	@media only screen and (max-width: 767px) {
+		font-size: 3em;
+	}
+}
+
+.header4 {
+	font-family: var(--font-light);
+	font-size: 2.4em;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.header5 {
+	font-family: var(--font-regular);
+	font-size: 1.4em;
+	line-height: 1em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 30px 0px;
+}
+
+.header6 {
+	font-family: var(--font-regular);
+	font-size: 1.8em;
+	line-height: 1em;
+	margin-top: 20px;
+}
+
+.service-header {
+	font-family: var(--font-bold);
+	font-size: 14em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: -5px;
+
+	span {
+		font-family: 'AMAR Accent';
+		font-size: 0.92em;
+		letter-spacing: 0px;
+	}
+
+	@media only screen and (max-width: 991px) {
+		font-size: 10em;
+	}
+
+	@media only screen and (max-width: 767px) {
+		font-size: 6.5em;
+	}
+}
+
+p,
+ul,
+ol {
+	font-family: var(--font-regular);
+	font-size: 1.6em;
+	line-height: 1.6em;
+	margin: 10px 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+.hero p {
+	font-family: var(--font-regular);
+	font-size: 2.2em;
+	line-height: 1.4em;
+}
+
+.intro p {
+	font-family: var(--font-regular);
+	font-size: 2em;
+	line-height: 1.6em;
+}
+
+.small p {
+	font-family: var(--font-regular);
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+
+
+strong,
+.bold {
+	font-family: var(--font-bold);
+}
+
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	font-size: 1em;
+	line-height: 1em;
+
+	&:hover {
+		color: var(--color-primary);
+	}
+}
+
+a.link {
+	color: var(--text-color);
+	text-decoration: none;
+	outline: none;
+
+	&::after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 3px;
+		background: var(--color-primary);
+		transition: width .3s;
+	}
+
+	&:hover,
+	&.active--exact {
+		color: var(--color-primary);
+
+		&::after {
+			width: 100%;
+		}
+	}
+}
+
+.label {
+	font-family: var(--font-regular);
+	font-size: 1.2em;
+	color: var(--text-color);
+
+	text-transform: uppercase;
+
+	&:after {
+		content: '/';
+		margin: 10px;
+		color: var(--color-primary);
+	}
+
+	&:last-child {
+		&:after {
+			content: none;
+			margin: 0;
+		}
+	}
+}
+
+
+figcaption {
+	font-size: 1.4em;
+	line-height: 1.4em;
+	font-style: italic;
+	margin: 20px 0px;
+}

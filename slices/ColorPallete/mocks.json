@@ -1,0 +1,108 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"intro": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua proident irure esse voluptate fugiat fugiat sint. Ex sunt deserunt laboris ex aliquip."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"pantone",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Pantone Black 7 C"
+						}
+					],
+					[
+						"cmyk",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "C72 M64 Y58 K52"
+						}
+					],
+					[
+						"hex",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "#36383c"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"pantone",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Pantone 876 C"
+						}
+					],
+					[
+						"cmyk",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "C72 M64 Y58 K52"
+						}
+					],
+					[
+						"hex",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "#95694d"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"pantone",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Pantone Cool Gray 2 C"
+						}
+					],
+					[
+						"cmyk",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "C15 M11 Y13 K0"
+						}
+					],
+					[
+						"hex",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "#dbd9d6"
+						}
+					]
+				]
+			}
+		]
+	}
+]

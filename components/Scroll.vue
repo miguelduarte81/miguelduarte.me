@@ -9,7 +9,7 @@
 .scroll {
 	position: absolute;
 	width: 20px;
-	top: 80vh;
+	top: 75vh;
 
 	rect {
 		stroke: var(--text-color);

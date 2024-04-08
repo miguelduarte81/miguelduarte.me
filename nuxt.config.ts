@@ -16,14 +16,19 @@ export default defineNuxtConfig({
 	},
 
 	vite: {
-		plugins: [svgLoader()],
-		vue: {
-			template: {
-				compilerOptions: {
-					isCustomElement: tag => tag.startsWith('lord-')
-				}
+		plugins: [svgLoader({
+			svgoConfig: {
+				plugins: [
+					{
+						name: 'removeViewBox',
+						active: false,
+					},
+					'removeDimensions',
+				],
 			}
-		},
+		})],
+
+
 		css: {
 			preprocessorOptions: {
 				scss: {
@@ -32,6 +37,7 @@ export default defineNuxtConfig({
 			}
 		},
 	},
+
 
 	css: [
 		'~/assets/styles/main.scss',

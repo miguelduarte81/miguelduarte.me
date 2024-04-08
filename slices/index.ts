@@ -9,4 +9,5 @@ export const components = defineSliceZoneComponents({
   intro_copy: defineAsyncComponent(() => import("./IntroCopy/index.vue")),
   parallax_img: defineAsyncComponent(() => import("./ParallaxImg/index.vue")),
   rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
+  video_player: defineAsyncComponent(() => import("./VideoPlayer/index.vue")),
 });

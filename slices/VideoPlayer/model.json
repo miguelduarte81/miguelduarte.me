@@ -1,0 +1,44 @@
+{
+  "id": "video_player",
+  "type": "SharedSlice",
+  "name": "VideoPlayer",
+  "description": "VideoPlayer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "controls": {
+          "type": "Boolean",
+          "config": {
+            "label": "Display Controls",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "loop": {
+          "type": "Boolean",
+          "config": {
+            "label": "Loop",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "vimeo_id": {
+          "type": "Text",
+          "config": {
+            "label": "Vimeo ID",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

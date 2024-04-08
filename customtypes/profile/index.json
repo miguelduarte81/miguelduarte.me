@@ -51,18 +51,41 @@
         }
       },
       "software": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Software",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "logos": {
         "type": "Group",
         "config": {
-          "label": "Logos",
+          "label": "Software",
+          "repeat": true,
+          "fields": {
+            "svg": {
+              "type": "Text",
+              "config": {
+                "label": "SVG",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "languages": {
+        "type": "Group",
+        "config": {
+          "label": "Languages",
+          "repeat": true,
+          "fields": {
+            "svg": {
+              "type": "Text",
+              "config": {
+                "label": "SVG",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "clients": {
+        "type": "Group",
+        "config": {
+          "label": "Clients",
           "repeat": true,
           "fields": {
             "svg": {

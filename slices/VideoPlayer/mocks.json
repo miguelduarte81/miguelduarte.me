@@ -1,0 +1,22 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"controls": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"loop": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"vimeo_id": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "919260673"
+			}
+		},
+		"items": []
+	}
+]

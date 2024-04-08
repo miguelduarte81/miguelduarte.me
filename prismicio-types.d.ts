@@ -5,15 +5,45 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Item in *Profile → Logos*
+ * Item in *Profile → Software*
  */
-export interface ProfileDocumentDataLogosItem {
+export interface ProfileDocumentDataSoftwareItem {
   /**
-   * SVG field in *Profile → Logos*
+   * SVG field in *Profile → Software*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: profile.logos[].svg
+   * - **API ID Path**: profile.software[].svg
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  svg: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Profile → Languages*
+ */
+export interface ProfileDocumentDataLanguagesItem {
+  /**
+   * SVG field in *Profile → Languages*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: profile.languages[].svg
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  svg: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Profile → Clients*
+ */
+export interface ProfileDocumentDataClientsItem {
+  /**
+   * SVG field in *Profile → Clients*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: profile.clients[].svg
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   svg: prismic.KeyTextField;
@@ -83,24 +113,35 @@ interface ProfileDocumentData {
   /**
    * Software field in *Profile*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: profile.software
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  software: prismic.RichTextField;
-
-  /**
-   * Logos field in *Profile*
-   *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: profile.logos[]
+   * - **API ID Path**: profile.software[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  logos: prismic.GroupField<Simplify<ProfileDocumentDataLogosItem>>;
+  software: prismic.GroupField<Simplify<ProfileDocumentDataSoftwareItem>>;
+
+  /**
+   * Languages field in *Profile*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: profile.languages[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  languages: prismic.GroupField<Simplify<ProfileDocumentDataLanguagesItem>>;
+
+  /**
+   * Clients field in *Profile*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: profile.clients[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  clients: prismic.GroupField<Simplify<ProfileDocumentDataClientsItem>>;
 
   /**
    * Slice Zone field in *Profile*
@@ -178,262 +219,13 @@ export interface ProjectDocumentDataServicesItem {
 
 type ProjectDocumentDataSlicesSlice = never;
 
-/**
- * Primary content in *Project → Slice Zone → Identity → Primary*
- */
-export interface ProjectDocumentDataBodyIdentitySlicePrimary {
-  /**
-   * Logo field in *Project → Slice Zone → Identity → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.body[].identity.primary.logo
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyIdentitySlice = prismic.Slice<
-  "identity",
-  Simplify<ProjectDocumentDataBodyIdentitySlicePrimary>,
-  never
->;
-
-/**
- * Primary content in *Project → Slice Zone → Colors → Primary*
- */
-export interface ProjectDocumentDataBodyColorsSlicePrimary {
-  /**
-   * Colours field in *Project → Slice Zone → Colors → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Project Colours
-   * - **API ID Path**: project.body[].colors.primary.colours
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  colours: prismic.RichTextField;
-}
-
-/**
- * Item content in *Project → Slice Zone → Colors → Items*
- */
-export interface ProjectDocumentDataBodyColorsSliceItem {
-  /**
-   * Hex field in *Project → Slice Zone → Colors → Items*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.body[].colors.items.hex
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  hex: prismic.ColorField;
-
-  /**
-   * CMYK field in *Project → Slice Zone → Colors → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: C0 M0 Y0 K0
-   * - **API ID Path**: project.body[].colors.items.cmyk
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cmyk: prismic.KeyTextField;
-
-  /**
-   * Pantone field in *Project → Slice Zone → Colors → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Pantone
-   * - **API ID Path**: project.body[].colors.items.pantone
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  pantone: prismic.KeyTextField;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyColorsSlice = prismic.Slice<
-  "colors",
-  Simplify<ProjectDocumentDataBodyColorsSlicePrimary>,
-  Simplify<ProjectDocumentDataBodyColorsSliceItem>
->;
-
-/**
- * Primary content in *Project → Slice Zone → Video → Primary*
- */
-export interface ProjectDocumentDataBodyFeaturedVideoSlicePrimary {
-  /**
-   * Video Title field in *Project → Slice Zone → Video → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Video Title
-   * - **API ID Path**: project.body[].featured_video.primary.video_title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  video_title: prismic.TitleField;
-
-  /**
-   * Video Text field in *Project → Slice Zone → Video → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Video Text
-   * - **API ID Path**: project.body[].featured_video.primary.video_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  video_text: prismic.RichTextField;
-
-  /**
-   * Video ID field in *Project → Slice Zone → Video → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: Video ID (Vimeo)
-   * - **API ID Path**: project.body[].featured_video.primary.video_id
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  video_id: prismic.NumberField;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyFeaturedVideoSlice = prismic.Slice<
-  "featured_video",
-  Simplify<ProjectDocumentDataBodyFeaturedVideoSlicePrimary>,
-  never
->;
-
-/**
- * Primary content in *Project → Slice Zone → Copy → Primary*
- */
-export interface ProjectDocumentDataBodyCopySlicePrimary {
-  /**
-   * Header field in *Project → Slice Zone → Copy → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Header
-   * - **API ID Path**: project.body[].copy.primary.header
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  header: prismic.TitleField;
-
-  /**
-   * Text field in *Project → Slice Zone → Copy → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Text
-   * - **API ID Path**: project.body[].copy.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyCopySlice = prismic.Slice<
-  "copy",
-  Simplify<ProjectDocumentDataBodyCopySlicePrimary>,
-  never
->;
-
-/**
- * Primary content in *Project → Slice Zone → Parallax → Primary*
- */
-export interface ProjectDocumentDataBodyParallaxSlicePrimary {
-  /**
-   * Image field in *Project → Slice Zone → Parallax → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.body[].parallax.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyParallaxSlice = prismic.Slice<
-  "parallax",
-  Simplify<ProjectDocumentDataBodyParallaxSlicePrimary>,
-  never
->;
-
-/**
- * Item content in *Project → Slice Zone → Gallery Grid → Items*
- */
-export interface ProjectDocumentDataBodyGalleryGridSliceItem {
-  /**
-   * Image field in *Project → Slice Zone → Gallery Grid → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.body[].gallery_grid.items.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Description field in *Project → Slice Zone → Gallery Grid → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Description
-   * - **API ID Path**: project.body[].gallery_grid.items.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyGalleryGridSlice = prismic.Slice<
-  "gallery_grid",
-  Record<string, never>,
-  Simplify<ProjectDocumentDataBodyGalleryGridSliceItem>
->;
-
-/**
- * Primary content in *Project → Slice Zone → Featured Image → Primary*
- */
-export interface ProjectDocumentDataBodyFeaturedImageSlicePrimary {
-  /**
-   * Featured Image field in *Project → Slice Zone → Featured Image → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.body[].featured_image.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<"tablet" | "mobile">;
-}
-
-/**
- * Slice for *Project → Slice Zone*
- */
-export type ProjectDocumentDataBodyFeaturedImageSlice = prismic.Slice<
-  "featured_image",
-  Simplify<ProjectDocumentDataBodyFeaturedImageSlicePrimary>,
-  never
->;
-
 type ProjectDocumentDataBodySlice =
+  | VideoPlayerSlice
   | RichTextSlice
   | ParallaxImgSlice
   | IntroCopySlice
   | ImageGallerySlice
-  | ColorPalleteSlice
-  | ProjectDocumentDataBodyIdentitySlice
-  | ProjectDocumentDataBodyColorsSlice
-  | ProjectDocumentDataBodyFeaturedVideoSlice
-  | ProjectDocumentDataBodyCopySlice
-  | ProjectDocumentDataBodyParallaxSlice
-  | ProjectDocumentDataBodyGalleryGridSlice
-  | ProjectDocumentDataBodyFeaturedImageSlice;
+  | ColorPalleteSlice;
 
 /**
  * Content for Project documents
@@ -502,6 +294,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */;
   body: prismic.SliceZone<ProjectDocumentDataBodySlice> /**
+   * Meta Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Project*
    *
    * - **Field Type**: Text
@@ -509,7 +312,7 @@ interface ProjectDocumentData {
    * - **API ID Path**: project.meta_description
    * - **Tab**: SEO
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -928,6 +731,73 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *VideoPlayer → Primary*
+ */
+export interface VideoPlayerSliceDefaultPrimary {
+  /**
+   * Display Controls field in *VideoPlayer → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: video_player.primary.controls
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  controls: prismic.BooleanField;
+
+  /**
+   * Loop field in *VideoPlayer → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: video_player.primary.loop
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  loop: prismic.BooleanField;
+
+  /**
+   * Vimeo ID field in *VideoPlayer → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_player.primary.vimeo_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  vimeo_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoPlayer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoPlayerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoPlayerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoPlayer*
+ */
+type VideoPlayerSliceVariation = VideoPlayerSliceDefault;
+
+/**
+ * VideoPlayer Shared Slice
+ *
+ * - **API ID**: `video_player`
+ * - **Description**: VideoPlayer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoPlayerSlice = prismic.SharedSlice<
+  "video_player",
+  VideoPlayerSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -940,20 +810,14 @@ declare module "@prismicio/client" {
     export type {
       ProfileDocument,
       ProfileDocumentData,
-      ProfileDocumentDataLogosItem,
+      ProfileDocumentDataSoftwareItem,
+      ProfileDocumentDataLanguagesItem,
+      ProfileDocumentDataClientsItem,
       ProfileDocumentDataSlicesSlice,
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataServicesItem,
       ProjectDocumentDataSlicesSlice,
-      ProjectDocumentDataBodyIdentitySlicePrimary,
-      ProjectDocumentDataBodyColorsSlicePrimary,
-      ProjectDocumentDataBodyColorsSliceItem,
-      ProjectDocumentDataBodyFeaturedVideoSlicePrimary,
-      ProjectDocumentDataBodyCopySlicePrimary,
-      ProjectDocumentDataBodyParallaxSlicePrimary,
-      ProjectDocumentDataBodyGalleryGridSliceItem,
-      ProjectDocumentDataBodyFeaturedImageSlicePrimary,
       ProjectDocumentDataBodySlice,
       SettingsDocument,
       SettingsDocumentData,
@@ -980,6 +844,10 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      VideoPlayerSlice,
+      VideoPlayerSliceDefaultPrimary,
+      VideoPlayerSliceVariation,
+      VideoPlayerSliceDefault,
     };
   }
 }

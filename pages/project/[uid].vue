@@ -37,8 +37,40 @@ gsap.registerPlugin(ScrollTrigger);
 const { client } = usePrismic();
 const route = useRoute();
 
+const { data: page } = await useAsyncData(`[project-uid-${route.params.uid}]`, async () => {
+	const document = await client.getByUID("project", route.params.uid);
+
+	if (document) {
+		return document;
+	} else {
+		throw createError({ statusCode: 404, message: "Page not found" });
+	}
+});
+
+const { data: projects } = useAsyncData("projects", () =>
+	client.getAllByType("project", {
+		orderings: {
+			field: 'document.last_publication_date',
+			direction: 'desc',
+		}
+	})
+);
+
+const nextProject = computed(() => {
+	let currIndex = projects?.value.findIndex(project => project.uid === route.params.uid)
+
+	if (currIndex < projects?.value.length - 1) {
+		currIndex++
+	} else {
+		currIndex = 0
+	}
+
+	const nextUID = projects?.value[currIndex].uid
+	return nextUID;
+})
+
 useSeoMeta({
-	title: () => `${page.value?.data.client} by Miguel Duarte` ,
+	title: () => `${page.value?.data.meta_title} by Miguel Duarte` ,
 	description: () => page.value?.data.meta_description,
 	ogTitle: () => page.value?.data.meta_title,
 	ogUrl: () => `https://miguelduarte.me${route.path}`,
@@ -81,37 +113,7 @@ const startAnim = () => {
 	gsap.set(".skew", { transformOrigin: "right center", force3D: true });
 }
 
-const { data: page } = await useAsyncData(`[project-uid-${route.params.uid}]`, async () => {
-	const document = await client.getByUID("project", route.params.uid);
 
-	if (document) {
-		return document;
-	} else {
-		throw createError({ statusCode: 404, message: "Page not found" });
-	}
-});
-
-const { data: projects } = useAsyncData("projects", () =>
-	client.getAllByType("project", {
-		orderings: {
-			field: 'document.last_publication_date',
-			direction: 'desc',
-		}
-	})
-);
-
-const nextProject = computed(() => {
-	let currIndex = projects?.value.findIndex(project => project.uid === route.params.uid)
-
-	if (currIndex < projects?.value.length - 1) {
-		currIndex++
-	} else {
-		currIndex = 0
-	}
-
-	const nextUID = projects?.value[currIndex].uid
-	return nextUID;
-})
 
 </script>
 

@@ -1,43 +1,22 @@
 @font-face {
 	font-family: 'AMAR Light';
 	font-style: normal;
-	font-weight: normal;
 	font-display: swap;
-	src: url('../fonts/amar_light.eot');
-	src: url('../fonts/amar_light.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/amar_light.woff2') format('woff2'),
-		url('../fonts/amar_light.woff') format('woff'),
-		url('../fonts/amar_light.otf') format('opentype'),
-		url('../fonts/amar_light.ttf') format('truetype'),
-		url('../fonts/amar_light.svg#amarregular') format('svg');
+	src: url('../fonts/FiraSans-Thin.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'AMAR Regular';
 	font-style: normal;
-	font-weight: normal;
 	font-display: swap;
-	src: url('../fonts/amar_regular.eot');
-	src: url('../fonts/amar_regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/amar_regular.woff2') format('woff2'),
-		url('../fonts/amar_regular.woff') format('woff'),
-		url('../fonts/amar_regular.otf') format('opentype'),
-		url('../fonts/amar_regular.ttf') format('truetype'),
-		url('../fonts/amar_regular.svg#amarregular') format('svg');
+	src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'AMAR Bold';
 	font-style: normal;
-	font-weight: bold;
 	font-display: swap;
-	src: url('../fonts/amar_bold.eot');
-	src: url('../fonts/amar_bold.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/amar_bold.woff2') format('woff2'),
-		url('../fonts/amar_bold.woff') format('woff'),
-		url('../fonts/amar_bold.otf') format('opentype'),
-		url('../fonts/amar_bold.ttf') format('truetype'),
-		url('../fonts/amar_bold.svg#amarbold') format('svg');
+	src: url('../fonts/FiraSans-Medium.ttf') format('truetype');
 }
 
 /* HEADER STYLES */
@@ -46,7 +25,7 @@
 	font-size: 6em;
 	line-height: 1em;
 	text-transform: uppercase;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	font-kerning: none;
 
 	@media only screen and (max-width: 767px) {
